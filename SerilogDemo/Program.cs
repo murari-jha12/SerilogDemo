@@ -5,7 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 var logger = new LoggerConfiguration()
-   .WriteTo.ApplicationInsights(new TelemetryConfiguration { InstrumentationKey = "84b6bc0d-c8c7-4fbf-901b-f79a1dfc6b2a" }, TelemetryConverter.Traces)
+   .WriteTo.ApplicationInsights(new TelemetryConfiguration { InstrumentationKey = "your key" }, TelemetryConverter.Traces)
   .ReadFrom.Configuration(builder.Configuration)
   .Enrich.FromLogContext()
   .CreateLogger();
