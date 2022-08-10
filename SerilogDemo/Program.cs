@@ -1,3 +1,4 @@
+
 using Microsoft.ApplicationInsights.Extensibility;
 using Serilog;
 
@@ -5,7 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 var logger = new LoggerConfiguration()
-   .WriteTo.ApplicationInsights(new TelemetryConfiguration { InstrumentationKey = "your key" }, TelemetryConverter.Traces)
+   .WriteTo.ApplicationInsights(new TelemetryConfiguration { InstrumentationKey = "your key" }, TelemetryConverter.Traces) // ApplicationInsights method here is necessary if you require to configure your log on Azure portal. 
   .ReadFrom.Configuration(builder.Configuration)
   .Enrich.FromLogContext()
   .CreateLogger();
