@@ -72,7 +72,9 @@ namespace SerilogDemo.Controllers
             }
             catch (Exception ex)
             {
-                _logger.LogError("Error occured while getting student Info {@exception}", ex);
+                
+               _logger.LogError("Error occured while getting student Info {@exception}", ex);
+                throw new Exception();
             }
             return studentInfo;
         }
